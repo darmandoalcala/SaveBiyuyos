@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Titulo de la actividad -->
+    <TextView
+        android:id="@+id/textTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayuda"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botón para exportar información a CSV -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnExportarCSV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exportar a CSV"
+        app:layout_constraintTop_toBottomOf="@id/textTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:background="#A5D6A7"/>
+
+    <!-- Botón para importar información -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnImportar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Importar Información"
+        app:layout_constraintTop_toBottomOf="@id/btnExportarCSV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:background="#CE93D8"/>
+
+    <!-- Botón para soporte -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSoporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soporte"
+        app:layout_constraintTop_toBottomOf="@id/btnImportar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:background="#FFF59D"/>
+
+    <!-- Botón para preguntas frecuentes -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPreguntasFrecuentes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preguntas Frecuentes"
+        app:layout_constraintTop_toBottomOf="@id/btnSoporte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:background="#9FA8DA"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstAppActivity">
+
+    <!-- Titulo de la app -->
+
+    <TextView
+        android:id="@+id/textApp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:text="Save Biyuyos"
+        tools:ignore="HardcodedText" />
+
+    <!-- Ingresos y egresos -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ingresosButton"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:text="Ingresos"
+        android:background="#4CAF50"
+        app:layout_constraintTop_toBottomOf="@id/textApp"
+        app:layout_constraintEnd_toStartOf="@id/egresosButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/egresosButton"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:text="Egresos"
+        android:background="#E27070"
+        app:layout_constraintTop_toBottomOf="@id/textApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ingresosButton"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Sección Deudas -->
+    <TextView
+        android:id="@+id/textDeudas"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/ingresosButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="Deudas"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/crearDeudaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear deuda"
+        android:background="#E89AF0"
+        app:layout_constraintTop_toBottomOf="@id/textDeudas"
+        app:layout_constraintEnd_toStartOf="@id/abonarDeudaButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abonarDeudaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abonar a deuda"
+        android:background="#E89AF0"
+        app:layout_constraintTop_toBottomOf="@id/textDeudas"
+        app:layout_constraintEnd_toStartOf="@id/eliminarDeudaButton"
+        app:layout_constraintStart_toEndOf="@id/crearDeudaButton"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/eliminarDeudaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar deuda"
+        android:background="#E89AF0"
+        app:layout_constraintTop_toBottomOf="@id/textDeudas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/abonarDeudaButton"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Sección Ahorros -->
+    <TextView
+        android:id="@+id/textAhorros"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/crearDeudaButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="Ahorros"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/AhorrosButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ahorros"
+        android:background="#A5D6A7"
+        app:layout_constraintTop_toBottomOf="@id/textAhorros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <!--Seccion mas-->
+
+    <TextView
+        android:id="@+id/masInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Más"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/AhorrosButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/estadoFinancieroButton"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:text="Ver estado financiero"
+        android:background="#B39DDB"
+        app:layout_constraintTop_toBottomOf="@id/masInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ayudaButton"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:text="Ayuda"
+        android:background="#B39DDB"
+        app:layout_constraintTop_toBottomOf="@id/estadoFinancieroButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
