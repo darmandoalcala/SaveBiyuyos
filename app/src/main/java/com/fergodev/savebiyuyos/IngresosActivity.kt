@@ -37,9 +37,10 @@ class IngresosActivity : AppCompatActivity() {
         // Referencias a los TextViews
         val textIngresoFijoTotal = findViewById<TextView>(R.id.textIngresoFijoTotal)
         val textIngresoExtraTotal = findViewById<TextView>(R.id.textIngresoExtraTotal)
+        val textTotalTotal = findViewById<TextView>(R.id.textTotalTotal)
 
         // Cargar datos existentes desde la base de datos
-        cargarIngresos(textIngresoFijoTotal, textIngresoExtraTotal)
+        cargarIngresos(textIngresoFijoTotal, textIngresoExtraTotal, textTotalTotal)
 
         // Botón para agregar ingreso fijo
         val btnAgregarIngresoFijo = findViewById<AppCompatButton>(R.id.btnAgregarIngresoFijo)
@@ -54,7 +55,7 @@ class IngresosActivity : AppCompatActivity() {
         }
     }
 
-    private fun cargarIngresos(textIngresoFijoTotal: TextView, textIngresoExtraTotal: TextView) {
+    private fun cargarIngresos(textIngresoFijoTotal: TextView, textIngresoExtraTotal: TextView, textTotalTotal: TextView) {
         // Usar coroutines para realizar operaciones de base de datos en segundo plano
         lifecycleScope.launch {
             // Obtener los ingresos desde la base de datos
@@ -64,10 +65,12 @@ class IngresosActivity : AppCompatActivity() {
             // Calcular los totales
             totalIngresoFijo = ingresosFijos.sumOf { it.monto }
             totalIngresoExtra = ingresosExtras.sumOf { it.monto }
+            val total = totalIngresoFijo + totalIngresoExtra
 
             // Actualizar los TextViews
             textIngresoFijoTotal.text = "Total Ingreso Fijo: $$totalIngresoFijo"
             textIngresoExtraTotal.text = "Total Ingreso Extra: $$totalIngresoExtra"
+            textTotalTotal.text = "Total Ingresos de este mes: $$total"
         }
     }
 
