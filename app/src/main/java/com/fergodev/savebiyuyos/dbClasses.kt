@@ -26,15 +26,15 @@ data class Ahorro(
     val abonado: Double,      // Monto abonado hasta el momento
     val fechaMeta: String     // Fecha límite para alcanzar la meta
 )
-
+*/
 @Entity(tableName = "deudas")
 data class Deuda(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val descripcion: String,  // Descripción de la deuda
+    val nombre: String,       // Nombre de la deuda
     val monto: Double,        // Monto de la deuda
     val abonado: Double       // Monto abonado hasta el momento
 )
-
+/*
 @Entity(tableName = "perfil")
 data class Perfil(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
