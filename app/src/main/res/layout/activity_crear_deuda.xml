@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstAppActivity">
+    tools:context=".CrearDeudaActivity">
 
     <!-- Titulo de la app -->
 
@@ -41,11 +41,14 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etNombre"
+        android:hint="Debo a.."
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/textNombre"
         app:layout_constraintTop_toBottomOf="@id/textTitulo"
-        app:layout_constraintStart_toEndOf="@+id/textNombre"/>
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textMonto"
@@ -63,11 +66,14 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etMonto"
+        android:hint="Cuánto debo"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/textMonto"
         app:layout_constraintTop_toBottomOf="@id/textNombre"
-        app:layout_constraintStart_toEndOf="@+id/textMonto"/>
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textAbono"
@@ -88,9 +94,11 @@
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:minHeight="48dp"
         android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/textAbono"
         app:layout_constraintTop_toBottomOf="@id/textMonto"
-        app:layout_constraintStart_toEndOf="@+id/textAbono"/>
+        tools:ignore="HardcodedText" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCrear"
@@ -101,7 +109,8 @@
         android:background="#E89AF0"
         app:layout_constraintTop_toBottomOf="@id/textAbono"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
 
 
 

@@ -19,49 +19,63 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
 
-    <!-- Spinner para seleccionar deuda -->
+    <!-- Instrucciones para seleccionar deuda -->
     <TextView
         android:id="@+id/textDeuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selecciona una deuda:"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/textTitulo"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        tools:ignore="HardcodedText" />
 
+    <!-- Spinner para seleccionar deuda -->
     <Spinner
         android:id="@+id/spinnerDeudas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textDeuda"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintTop_toBottomOf="@id/textDeuda" />
 
-    <!-- Campo para ingresar monto de abono -->
+    <!-- Instrucciones para monto de abono -->
     <TextView
         android:id="@+id/textAbono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Monto a abonar:"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/spinnerDeudas"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        tools:ignore="HardcodedText" />
 
+    <!-- Campo para ingresar monto de abono -->
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etMontoAbono"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="0"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@id/spinnerDeudas"
-        app:layout_constraintStart_toEndOf="@id/textAbono"
-        android:layout_marginTop="8dp" />
+        android:minWidth="240dp"
+        android:minHeight="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAbono"
+        tools:ignore="HardcodedText" />
+
 
     <!-- Botón para realizar el abono -->
     <androidx.appcompat.widget.AppCompatButton
@@ -73,6 +87,8 @@
         android:background="#E89AF0"
         app:layout_constraintTop_toBottomOf="@id/etMontoAbono"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:minHeight="48dp"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
