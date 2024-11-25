@@ -34,7 +34,7 @@ class AbonarDeudaActivity : AppCompatActivity() {
         // Configurar botón "Abonar"
         binding.btnAbonar.setOnClickListener {
             val montoAbono = binding.etMontoAbono.text.toString().toDoubleOrNull() ?: 0.0
-            if (montoAbono != 0.0) {
+            if (montoAbono > 0.0) {
                 val deudaId = (binding.spinnerDeudas.selectedItem as Deuda).id
                 // Llamar al método para abonar
                 abonarDeuda(deudaId, montoAbono)

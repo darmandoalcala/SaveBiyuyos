@@ -17,7 +17,7 @@ data class Gasto(
     val tipoGasto: String,  // "Fijo" o "Extra"
     val monto: Double
 )
-/*
+
 @Entity(tableName = "ahorros")
 data class Ahorro(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
@@ -26,7 +26,7 @@ data class Ahorro(
     val abonado: Double,      // Monto abonado hasta el momento
     val fechaMeta: String     // Fecha límite para alcanzar la meta
 )
-*/
+
 @Entity(tableName = "deudas")
 data class Deuda(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,

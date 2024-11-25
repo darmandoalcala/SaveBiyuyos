@@ -10,11 +10,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.Update
 
-@Database(entities = [Ingreso::class, Gasto::class, Deuda::class], version = 1)
+@Database(entities = [Ingreso::class, Gasto::class, Deuda::class, Ahorro::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun ingresoDao(): IngresoDao
     abstract fun gastoDao(): GastoDao
     abstract fun deudaDao(): DeudaDao
+    abstract fun ahorroDao(): AhorroDao
 
     companion object {
         @Volatile
@@ -68,17 +69,6 @@ interface GastoDao {
 
 }
 
-
-/*
-@Dao
-interface AhorroDao {
-    @Insert
-    suspend fun insertarAhorro(ahorro: Ahorro)
-
-    @Query("SELECT * FROM ahorros WHERE id = :id")
-    suspend fun obtenerAhorro(id: Int): Ahorro
-}
-*/
 @Dao
 interface DeudaDao {
     @Insert
@@ -96,6 +86,30 @@ interface DeudaDao {
     @Delete
     suspend fun eliminarDeuda(deuda: Deuda)
 }
+
+@Dao
+interface AhorroDao {
+
+    @Insert
+    suspend fun insertarAhorro(ahorro: Ahorro)
+
+    @Update
+    suspend fun actualizarAhorro(ahorro: Ahorro)
+
+    @Query("SELECT * FROM ahorros")
+    suspend fun obtenerAhorros(): List<Ahorro>
+
+    @Query("SELECT * FROM ahorros WHERE id = :id")
+    suspend fun obtenerAhorro(id: Int): Ahorro?
+
+    @Query("UPDATE ahorros SET abonado = abonado + :monto WHERE id = :id")
+    fun abonarAhorro(id: Int, monto: Double)
+
+    @Delete
+    suspend fun eliminarAhorro(ahorro: Ahorro)
+}
+
+
 /*
 @Dao
 interface PerfilDao {

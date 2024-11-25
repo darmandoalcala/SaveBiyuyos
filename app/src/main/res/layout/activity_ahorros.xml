@@ -5,10 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstAppActivity">
+    tools:context=".AhorrosActivity">
 
     <!-- Titulo de la app -->
-
     <TextView
         android:id="@+id/textTitulo"
         android:layout_height="wrap_content"
@@ -23,6 +22,7 @@
         android:text="Ahorros"
         tools:ignore="HardcodedText" />
 
+    <!-- Sección Crear Ahorro -->
     <TextView
         android:id="@+id/textCrearAhorro"
         android:layout_height="wrap_content"
@@ -36,8 +36,6 @@
         android:text="Crear Ahorro"
         tools:ignore="HardcodedText" />
 
-    <!-- Sección Crear Deuda -->
-
     <TextView
         android:id="@+id/textNombre"
         android:layout_height="wrap_content"
@@ -48,9 +46,7 @@
         app:layout_constraintEnd_toStartOf="@+id/etNombre"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"
-        android:text="Nombre de ahorro:"
-        tools:ignore="HardcodedText" />
-
+        android:text="Nombre de ahorro:" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etNombre"
@@ -60,8 +56,7 @@
         android:hint="nombre"
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/textNombre"
-        app:layout_constraintTop_toBottomOf="@id/textCrearAhorro"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@id/textCrearAhorro" />
 
     <TextView
         android:id="@+id/textMonto"
@@ -73,9 +68,7 @@
         app:layout_constraintEnd_toStartOf="@+id/etMonto"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"
-        android:text="Monto a ahorrar:"
-        tools:ignore="HardcodedText" />
-
+        android:text="Monto a ahorrar:" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etMonto"
@@ -85,8 +78,7 @@
         android:hint="monto"
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/textMonto"
-        app:layout_constraintTop_toBottomOf="@id/textNombre"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@id/textNombre" />
 
     <TextView
         android:id="@+id/textFecha"
@@ -98,9 +90,7 @@
         app:layout_constraintEnd_toStartOf="@+id/etFecha"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"
-        android:text="Fecha Meta:"
-        tools:ignore="HardcodedText" />
-
+        android:text="Fecha Meta:" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etFecha"
@@ -110,8 +100,7 @@
         android:hint="DD/MM/AAAA"
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/textFecha"
-        app:layout_constraintTop_toBottomOf="@id/textMonto"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@id/textMonto" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCrear"
@@ -122,8 +111,7 @@
         android:background="#E89AF0"
         app:layout_constraintTop_toBottomOf="@id/textFecha"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textVerAhorros"
@@ -135,9 +123,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="10dp"
-        android:text="Ver Ahorros existentes"
-        tools:ignore="HardcodedText" />
-
+        android:text="Ver Ahorros existentes" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVer"
@@ -148,9 +134,9 @@
         android:background="#E89AF0"
         app:layout_constraintTop_toBottomOf="@id/textVerAhorros"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Spinner para ver los ahorros -->
     <Spinner
         android:id="@+id/spinnerAhorros"
         android:layout_width="match_parent"
@@ -161,6 +147,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnVer" />
 
+    <!-- Campos y botones de abonar y eliminar ahorros (inicialmente ocultos) -->
     <TextView
         android:id="@+id/textAbono"
         android:layout_height="wrap_content"
@@ -172,7 +159,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"
         android:text="Monto a abonar:"
-        tools:ignore="HardcodedText" />
+        android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etAbono"
@@ -183,7 +170,8 @@
         android:minHeight="48dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textFecha"
-        app:layout_constraintTop_toBottomOf="@id/spinnerAhorros" />
+        app:layout_constraintTop_toBottomOf="@id/spinnerAhorros"
+        android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAbonarAhorro"
@@ -194,7 +182,7 @@
         app:layout_constraintTop_toBottomOf="@id/etAbono"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnEliminarAhorro"
-        tools:ignore="HardcodedText" />
+        android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEliminarAhorro"
@@ -205,14 +193,5 @@
         app:layout_constraintTop_toBottomOf="@id/etAbono"
         app:layout_constraintStart_toEndOf="@id/btnAbonarAhorro"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText" />
-
-
-
-
-
-
-
-
-
+        android:visibility="gone" />
 </androidx.constraintlayout.widget.ConstraintLayout>
