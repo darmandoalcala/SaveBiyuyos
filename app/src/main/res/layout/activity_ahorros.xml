@@ -188,7 +188,7 @@
         android:id="@+id/btnEliminarAhorro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Eliminar"
+        android:text="Eliminar (sin registro)"
         android:background="#F44336"
         app:layout_constraintTop_toBottomOf="@id/etAbono"
         app:layout_constraintStart_toEndOf="@id/btnAbonarAhorro"

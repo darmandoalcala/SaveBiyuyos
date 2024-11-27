@@ -40,7 +40,7 @@ class EliminarDeudaActivity : AppCompatActivity() {
 
     private fun cargarDeudasASpinner() {
         lifecycleScope.launch {
-            deudasList = deudaDao.obtenerDeudas()
+            deudasList = deudaDao.obtenerDeudasNoLiquidadas()
 
             // Crear un adaptador para el Spinner con un formato personalizado
             val adapter = object : ArrayAdapter<Deuda>(
@@ -82,7 +82,8 @@ class EliminarDeudaActivity : AppCompatActivity() {
             try {
                 // Eliminar la deuda
                 val deuda = deudaDao.obtenerDeuda(id)
-                deudaDao.eliminarDeuda(deuda)
+                deudaDao.abonarDeuda(id, deuda.monto-deuda.abonado)
+                deudaDao.liquidarDeuda(deuda.id)
                 Toast.makeText(this@EliminarDeudaActivity, "Deuda eliminada", Toast.LENGTH_SHORT).show()
                 finish() // Cerrar la actividad despues de eliminar la deuda
             } catch (e: Exception) {

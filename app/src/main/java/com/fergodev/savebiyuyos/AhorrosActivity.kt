@@ -130,7 +130,7 @@ class AhorrosActivity : AppCompatActivity() {
 
     private fun cargarAhorrosASpinner() {
         lifecycleScope.launch {
-            ahorrosList = ahorroDao.obtenerAhorros()
+            ahorrosList = ahorroDao.obtenerAhorrosNoLiquidados()
 
             if (ahorrosList.isNotEmpty()) {
                 val adapter = object : ArrayAdapter<Ahorro>(
@@ -183,7 +183,7 @@ class AhorrosActivity : AppCompatActivity() {
                 }
 
                 // Calcular el monto pendiente
-                val montoPendiente = (ahorro.montoMeta ?: 0.0) - (ahorro.abonado ?: 0.0)
+                val montoPendiente = (ahorro.montoMeta) - (ahorro.abonado)
 
                 // Verificar que el abono no exceda el monto pendiente
                 if (abono > montoPendiente) {
@@ -194,7 +194,8 @@ class AhorrosActivity : AppCompatActivity() {
                     // Si el abono es igual al monto pendiente, eliminar el ahorro
                     if (abono == montoPendiente) {
                         withContext(Dispatchers.IO) {
-                            ahorroDao.eliminarAhorro(ahorro)
+                            ahorroDao.abonarAhorro(id, abono)
+                            ahorroDao.liquidarAhorro(id)
                         }
                         withContext(Dispatchers.Main) {
                             Toast.makeText(this@AhorrosActivity, "Ahorro completado y eliminado", Toast.LENGTH_SHORT).show()

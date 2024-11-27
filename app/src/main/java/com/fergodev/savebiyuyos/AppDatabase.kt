@@ -44,7 +44,7 @@ interface IngresoDao {
     suspend fun obtenerTotalIngresos(tipoIngreso: String): Double
 
     @Query("SELECT * FROM ingresos")
-    suspend fun getAllIngresos(): List<Ingreso>
+    suspend fun obtenerIngresos(): List<Ingreso>
 
     @Query("SELECT * FROM ingresos WHERE tipo = :tipo")
     suspend fun obtenerIngresosPorTipo(tipo: String): List<Ingreso>
@@ -83,13 +83,19 @@ interface DeudaDao {
     @Query("SELECT * FROM deudas")
     suspend fun obtenerDeudas(): List<Deuda>
 
+    @Query("SELECT * FROM deudas WHERE liquidado = 0")
+    suspend fun obtenerDeudasNoLiquidadas(): List<Deuda>
+
+    @Query("UPDATE deudas SET liquidado = 1 WHERE id = :id")
+    suspend fun liquidarDeuda(id: Int)
+
     @Delete
     suspend fun eliminarDeuda(deuda: Deuda)
 }
 
+
 @Dao
 interface AhorroDao {
-
     @Insert
     suspend fun insertarAhorro(ahorro: Ahorro)
 
@@ -99,15 +105,22 @@ interface AhorroDao {
     @Query("SELECT * FROM ahorros")
     suspend fun obtenerAhorros(): List<Ahorro>
 
+    @Query("SELECT * FROM ahorros WHERE liquidado = 0")
+    suspend fun obtenerAhorrosNoLiquidados(): List<Ahorro>
+
     @Query("SELECT * FROM ahorros WHERE id = :id")
     suspend fun obtenerAhorro(id: Int): Ahorro?
 
     @Query("UPDATE ahorros SET abonado = abonado + :monto WHERE id = :id")
-    fun abonarAhorro(id: Int, monto: Double)
+    suspend fun abonarAhorro(id: Int, monto: Double)
+
+    @Query("UPDATE ahorros SET liquidado = 1 WHERE id = :id")
+    suspend fun liquidarAhorro(id: Int)
 
     @Delete
     suspend fun eliminarAhorro(ahorro: Ahorro)
 }
+
 
 
 /*
