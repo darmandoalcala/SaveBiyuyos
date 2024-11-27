@@ -46,7 +46,7 @@ class AbonarDeudaActivity : AppCompatActivity() {
 
     private fun cargarDeudasASpinner() {
         lifecycleScope.launch {
-            deudasList = deudaDao.obtenerDeudas()
+            deudasList = deudaDao.obtenerDeudasNoLiquidadas()
 
             // Crear un adaptador para el Spinner con un formato personalizado
             val adapter = object : ArrayAdapter<Deuda>(

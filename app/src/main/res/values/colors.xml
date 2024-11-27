@@ -13,4 +13,7 @@
     <color name="light_purple">#c9c1d4</color>
     <color name="light_green">#c7e0c3</color>
     <color name="light_blue">#cce9eb</color>
+    <color name="green">#008000</color> <!-- Color para balance positivo -->
+    <color name="red">#FF0000</color>   <!-- Color para balance negativo -->
+    <color name="neutral">#000000</color> <!-- Color para balance cero -->
 </resources>
